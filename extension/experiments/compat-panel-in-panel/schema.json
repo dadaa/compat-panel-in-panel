@@ -1,0 +1,20 @@
+[
+  {
+    "namespace": "experiments.CompatPanelInPanel",
+    "description": "CompatPanelInPanel",
+    "functions": [
+      {
+        "name": "install",
+        "type": "function",
+        "description": "",
+        "parameters": [
+          {
+            "type": "string",
+            "name": "extensionRootPath"
+          }
+        ],
+        "async": true
+      }
+    ]
+  }
+]

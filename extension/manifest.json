@@ -1,0 +1,27 @@
+{
+  "manifest_version": 2,
+  "name": "compat-panel-in-panel",
+  "version": "1.0",
+  "description": "",
+  "applications": {
+    "gecko": {
+      "id": "compat-panel-in-panel@firefox-dev.tools"
+    }
+  },
+  "permissions": [],
+  "background": {
+    "scripts": [
+      "background.js"
+    ]
+  },
+  "experiment_apis": {
+    "CompatPanelInPanel": {
+      "schema": "experiments/compat-panel-in-panel/schema.json",
+      "parent": {
+        "scopes": ["addon_parent"],
+        "script": "experiments/compat-panel-in-panel/api.js",
+        "paths": [["experiments", "CompatPanelInPanel"]]
+      }
+    }
+  }
+}
