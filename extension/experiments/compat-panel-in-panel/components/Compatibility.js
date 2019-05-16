@@ -40,7 +40,10 @@ class Compatibility extends PureComponent {
     const browsers = this.compatData.browsers;
 
     const targets = [];
-    for (const name of ["firefox", "chrome", "safari", "edge"]) {
+    for (const name of ["firefox", "firefox_android",
+                        "chrome", "chrome_android",
+                        "safari", "safari_ios",
+                        "edge", "edge_mobile"]) {
       const { name: brandName, releases } = browsers[name];
 
       for (const version in releases) {
@@ -175,17 +178,16 @@ class Compatibility extends PureComponent {
       map[brandName].push(version);
     }
 
-    let browserText = " in ";
+    let browserText = "";
     for (let name in map) {
       const versions = map[name];
       browserText += `${ name } (${ versions.join(", ") }) `;
     }
-    browserText += ".";
 
     return dom.li(
       {},
       dom.label({ style: { fontWeight: 800, marginInlineEnd: "8px" } }, title),
-      dom.label({}, `is not supported in ${ browserText }`),
+      dom.label({}, `is not supported in ${ browserText }.`),
     );
   }
 
