@@ -202,7 +202,7 @@ class Compatibility extends PureComponent {
     }
 
     return dom.ul(
-      {},
+      { style: { listStyle: `url(${ CompatExperimentsRoot }/images/warning.svg)` } },
       issueList.map(({ property, propertyIssues, value, valueIssues }) => {
         return [
           this.renderList(`${ property } property`, propertyIssues),
